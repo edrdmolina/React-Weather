@@ -3,6 +3,7 @@ import axios from 'axios';
 // Hooks
 import { useEffect, useState } from 'react';
 // Components
+import Background from './components/Background';
 import Current from './components/Current';
 // Styles
 import './App.css';
@@ -35,7 +36,7 @@ function App() {
           console.log(err)
         }
       }  
-      // 
+      // If found geo location
       if(lat && lon) getData();
     } else {
       console.log("Geo-Location is not available");
@@ -54,6 +55,7 @@ function App() {
 
   return (
     <div className="App">
+      < Background />
       < Current {...weatherData} locationData={locationData} />
     </div>
   );

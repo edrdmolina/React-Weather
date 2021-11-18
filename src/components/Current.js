@@ -1,3 +1,6 @@
+// Styles
+import '../Styles/Current.css'
+
 function Current(props) {
     const { locationData, current, daily } = props
     
@@ -22,10 +25,10 @@ function Current(props) {
                 { weather }
             </div>
             <div className='current-min'>
-                {min}
+                L: {min}
             </div>
             <div className='current-max'>
-                {max}
+                H: {max}
             </div>
         </div>
     )
