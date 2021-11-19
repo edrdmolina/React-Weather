@@ -7,7 +7,7 @@ import Background from './Components/Background';
 import Loading from './Components/Loading';
 import Current from './Components/Current';
 // Styles
-import './App.css';
+
 
 function App() {
   const [lat, updateLat] = useState();

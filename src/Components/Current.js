@@ -1,7 +1,15 @@
+// Hooks
+// import useChangeInput from '../Hooks/useChangeInput';
+// import { makeStyles } from '@mui/styles';
+
+// Components
+// import { TextField } from '@mui/material';
+
 // Styles
-import '../Styles/Current.css'
+
 
 function Current(props) {
+    // const [zipCode, updateZipCode] = useChangeInput('');
     const { locationData, current, daily } = props
     
     let weather = 'N/A';
@@ -15,6 +23,7 @@ function Current(props) {
 
     return (
         <div className='Current'>
+            {/* <TextField label="Zip Code" variant="filled" value={zipCode} onChange={updateZipCode} /> */}
             <div className='current-location'>
                 { locationData ? locationData.city : 'N/A' }
             </div>
