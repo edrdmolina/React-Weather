@@ -1,13 +1,29 @@
 // Libraries
 import axios from 'axios';
+
 // Hooks
 import { useEffect, useState } from 'react';
+import { makeStyles } from '@mui/styles';
+import useChangeInput from './Hooks/useChangeInput';
+
 // Components
 import Background from './Components/Background';
 import Loading from './Components/Loading';
 import Current from './Components/Current';
-// Styles
+import { TextField } from '@mui/material';
 
+// Styles
+const appStyles = makeStyles({
+  nav: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    height: '20%',
+    width: '50%',
+    paddingTop: '1rem',
+    margin: '0 auto 0 auto'
+  }
+})
 
 function App() {
   const [lat, updateLat] = useState();
@@ -17,7 +33,9 @@ function App() {
   const [weatherData, updateWeatherData] = useState({});
   const [locationData, updateLocationData] = useState({});
   const [hasData, updateHasData] = useState(false);
-  // const [inputZip, toggleInputZip] = useState(false);
+  const [zipCode, updateZipCode, clearZipCode] = useChangeInput('');
+
+  const classes = appStyles();
 
   // Checks if location is supported by browser
   useEffect(() => {
@@ -54,18 +72,42 @@ function App() {
     })
   }
 
-    return (
-      <div className="App">
-        < Background />
-        { hasData ? (
-          <div>
-            < Current {...weatherData} locationData={locationData} />
-          </div>
-        ) : (
-          < Loading />
-        )}
-      </div>
-    );
+  async function submitGetGeo(e) {
+    e.preventDefault();
+    // Empties the lat and lon state
+    updateLat(null);
+    updateLon(null);
+    // Request lat and lon from back end
+    const res = await axios.post('https://multi-purpose-api.herokuapp.com/api/weather/location', { input: zipCode });
+    // If no location found trigger error
+    if (res.data.error) {
+      // ERROR HANDLER
+      return console.log(res.data.error)
+    }
+    // update lat and lon from results
+    const { lat, lon } = res.data
+    updateLat(lat);
+    updateLon(lon);
+  }
+
+  return (
+    <div className={classes.App}>
+      < Background />
+      <form className={classes.nav} onSubmit={submitGetGeo} >
+        <TextField label="Zip Code or City" size='small' fullWidth
+        value={zipCode} onChange={updateZipCode} onFocus={clearZipCode}
+        className={classes.zipCode}
+        />   
+      </form>
+      { hasData ? (
+        <div>
+          < Current {...weatherData} locationData={locationData} />
+        </div>
+      ) : (
+        < Loading />
+      )}
+    </div>
+  );
   
 }
 

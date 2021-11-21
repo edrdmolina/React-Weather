@@ -8,7 +8,7 @@ import Sun from '../Icons/Sun.svg'
 const loadingStyles = makeStyles({
     loading: {
         display: 'flex',
-        height: '100vh',
+        height: '80vh',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
