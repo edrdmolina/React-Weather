@@ -74,6 +74,7 @@ function App() {
 
   async function submitGetGeo(e) {
     e.preventDefault();
+    document.getElementById('zipCode').blur();
     // Empties the lat and lon state
     updateLat(null);
     updateLon(null);
@@ -96,7 +97,7 @@ function App() {
       <form className={classes.nav} onSubmit={submitGetGeo} >
         <TextField label="Zip Code or City" size='small' fullWidth
         value={zipCode} onChange={updateZipCode} onFocus={clearZipCode}
-        className={classes.zipCode}
+        className={classes.zipCode} id='zipCode' autoComplete='off'
         />   
       </form>
       { hasData ? (
