@@ -5,7 +5,7 @@ import axios from 'axios';
 // Components
 import Background from './Components/Background';
 import Loading from './Components/Loading';
-import Current from './Components/Current';
+import Weather from './Components/Weather';
 import Search from './Components/Search';
 
 // const backendURL = 'https://multi-purpose-api.herokuapp.com/api/weather';
@@ -80,7 +80,7 @@ export class App extends Component {
 
         const options = {
             enableHighAccuracy: true,
-            timeout: 5000,
+            timeout: 10000,
             maximumAge: 0
         }
 
@@ -106,9 +106,7 @@ export class App extends Component {
                 < Background />
                 < Search updateLocationData={updateLocationData} />
                 { hasWeather ? (
-                    <div>
-                        < Current {...weatherData} locationData={locationData} />
-                    </div>
+                    < Weather locationData={locationData} weatherData={weatherData} />
                 ) : (
                     < Loading />
                 )}

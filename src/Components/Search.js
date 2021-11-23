@@ -8,8 +8,8 @@ import { makeStyles } from '@mui/styles';
 
 // Components
 import { Button } from '@mui/material';
-import Country from './Country';
-import Address from './Address';
+import Country from './Search/Country';
+import Address from './Search/Address';
 
 // Styles
 const searchStyles = makeStyles({
@@ -17,7 +17,6 @@ const searchStyles = makeStyles({
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
-      height: '20%',
       paddingTop: '2rem',
       margin: '0 auto 0 auto'
     },
