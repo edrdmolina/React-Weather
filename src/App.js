@@ -1,115 +1,120 @@
 // Libraries
+import React, { Component } from 'react'
 import axios from 'axios';
-
-// Hooks
-import { useEffect, useState } from 'react';
-import { makeStyles } from '@mui/styles';
-import useChangeInput from './Hooks/useChangeInput';
 
 // Components
 import Background from './Components/Background';
 import Loading from './Components/Loading';
 import Current from './Components/Current';
-import { TextField } from '@mui/material';
+import Search from './Components/Search';
 
-// Styles
-const appStyles = makeStyles({
-  nav: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    height: '20%',
-    width: '50%',
-    paddingTop: '1rem',
-    margin: '0 auto 0 auto'
-  }
-})
+// const backendURL = 'https://multi-purpose-api.herokuapp.com/api/weather';
 
-function App() {
-  const [lat, updateLat] = useState();
-  const [lon, updateLon] = useState();
-  const [units, changeUnit] = useState('imperial');
-  const [lang, changeLang] = useState('en')
-  const [weatherData, updateWeatherData] = useState({});
-  const [locationData, updateLocationData] = useState({});
-  const [hasData, updateHasData] = useState(false);
-  const [zipCode, updateZipCode, clearZipCode] = useChangeInput('');
-
-  const classes = appStyles();
-
-  // Checks if location is supported by browser
-  useEffect(() => {
-    if ("geolocation" in navigator) {
-      console.log("Geo-Location is available");
-      // get geolocation coordinates
-      getGeo()
-
-      async function getData() {
-        try {
-          const input = {
-            lat, lon, units, lang
-          }
-          const res = await axios.post('https://multi-purpose-api.herokuapp.com/api/weather', input)
-          updateLocationData(res.data.location[0]);
-          updateWeatherData(res.data.weatherData);
-          updateHasData(true);
-        } catch (err) {
-          console.log(err)
+export class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            lat: '',
+            lon: '',
+            unit: 'imperial',
+            lang: 'en',
+            weatherData: {},
+            locationData: {},
+            hasLocation: false,
+            hasWeather: false,
+            input: ''
         }
-      }  
-      // If found geo location
-      if(lat && lon) getData();
-    } else {
-      console.log("Geo-Location is not available");
     }
-  }, [lat, lon, units, lang])
 
-  // Get geolocation
-  function getGeo() {
-    navigator.geolocation.getCurrentPosition((p) => {
-      updateLat(p.coords.latitude);
-      updateLon(p.coords.longitude);
-    })
-  }
-
-  async function submitGetGeo(e) {
-    e.preventDefault();
-    document.getElementById('zipCode').blur();
-    // Empties the lat and lon state
-    updateLat(null);
-    updateLon(null);
-    // Request lat and lon from back end
-    const res = await axios.post('https://multi-purpose-api.herokuapp.com/api/weather/location', { input: zipCode });
-    // If no location found trigger error
-    if (res.data.error) {
-      // ERROR HANDLER
-      return console.log(res.data.error)
+    componentDidMount = () => {
+      if('geolocation' in navigator) {
+        console.log("Geo-Location is available");
+        this.getGeo();
+      } else {
+        console.log("Geo-Location is not available");
+      }
     }
-    // update lat and lon from results
-    const { lat, lon } = res.data
-    updateLat(lat);
-    updateLon(lon);
-  }
 
-  return (
-    <div className={classes.App}>
-      < Background />
-      <form className={classes.nav} onSubmit={submitGetGeo} >
-        <TextField label="Zip Code or City" size='small' fullWidth
-        value={zipCode} onChange={updateZipCode} onFocus={clearZipCode}
-        className={classes.zipCode} id='zipCode' autoComplete='off'
-        />   
-      </form>
-      { hasData ? (
-        <div>
-          < Current {...weatherData} locationData={locationData} />
-        </div>
-      ) : (
-        < Loading />
-      )}
-    </div>
-  );
-  
+    componentDidUpdate = () => {
+      if(this.hasLocation) this.getWeatherData();
+    }
+
+    // Update the Latitude and Longitude state.
+    updateLatLon = (lat, lon) => this.setState({lat, lon});
+    // Update Location Data
+    updateLocationData = (locationData) => {
+        this.setState({
+            locationData: locationData, 
+            lat: locationData.latitude, 
+            lon: locationData.longitude, 
+            hasLocation: true 
+        })
+        this.getWeatherData()
+    }
+
+    // Gets weather data from backend
+    getWeatherData = async () => {
+        try {
+            const { lat, lon, unit, lang } = this.state;
+
+            const input = {lat, lon, unit, lang};
+
+            const res = await axios.post('http://localhost:5000/api/weather', input);
+
+            if(res.status !== 200) return console.log(res.status);
+
+            const { weatherData, location } = res.data;
+
+            this.setState({ weatherData: weatherData, hasWeather: true, locationData: location })
+
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    // Get geolocation from browser navigator
+    getGeo = () => {
+        // https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
+
+        const { updateLatLon, getWeatherData } = this;
+
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        }
+
+        function success(pos) {
+          const { latitude, longitude } = pos.coords;
+          updateLatLon(latitude, longitude);
+          return getWeatherData();
+        }
+
+        function error(err) {
+          console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+
+        navigator.geolocation.getCurrentPosition(success, error, options)
+    }
+    
+    render() {
+        const { updateLocationData } = this;
+        const { weatherData, locationData, hasWeather } = this.state;
+
+        return (
+            <div>
+                < Background />
+                < Search updateLocationData={updateLocationData} />
+                { hasWeather ? (
+                    <div>
+                        < Current {...weatherData} locationData={locationData} />
+                    </div>
+                ) : (
+                    < Loading />
+                )}
+            </div>
+        )
+    }
 }
 
 export default App;
