@@ -2,8 +2,8 @@
 export default function unixToHuman(dt = Date.now(), format = undefined) {    
     let daysOfMonth = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
     // Calculate days since Jan 1st 1970
-    let daysTillDt = parseInt(dt / (24 * 60 * 60 * 1000), 10)
-    let extraTime = dt % (24 * 60 * 60 * 1000);
+    let daysTillDt = parseInt(dt / (24 * 60 * 60), 10)
+    let extraTime = dt % (24 * 60 * 60);
     const res = {
         year: 1970,
         month: 1,
@@ -31,11 +31,11 @@ export default function unixToHuman(dt = Date.now(), format = undefined) {
     // update date to remaining days
     res.date = daysTillDt;
     // update hours
-    res.hour = Math.trunc(extraTime / 3600000) ;
+    res.hour = Math.trunc(extraTime / 3600);
     // update minutes
-    res.minute = Math.trunc((extraTime % 3600000) / 60000);
+    res.minute = Math.trunc((extraTime % 3600) / 60);
     // update seconds
-    res.second = Math.trunc(((extraTime % 3600000) % 60000) / 1000)
+    res.second = Math.trunc(((extraTime % 3600) % 60) / 1000)
 
     if(!format) return res;
     else return res[format];
