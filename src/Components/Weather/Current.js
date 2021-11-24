@@ -12,8 +12,7 @@ const currentStyles = makeStyles({
         alignItems: 'center',
         color: 'white',
         width: '50%',
-        margin: '0 auto 0 auto',
-        textShadow: '3px 3px 5px rgba(0, 0, 0, 0.5)'
+        textShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)'
     },
     location: {
         textAlign: 'center',
@@ -23,7 +22,7 @@ const currentStyles = makeStyles({
     },
     temp: {
         fontSize: '60px',
-        margin: '0.25rem 1rem 0.25rem 40px',
+        margin: '0.25rem 1rem 0.25rem 30px',
     },
     weather: {
         fontSize: '20px',

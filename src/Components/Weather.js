@@ -1,13 +1,16 @@
 // Hooks
 import { makeStyles } from '@mui/styles';
 // Components
-import { Grid } from '@mui/material';
 import Current from "./Weather/Current";
+import Hourly from './Weather/Hourly';
 // Styles
 const weatherStyles = makeStyles({
     weather: {
         marginTop: '2rem',
         minHeight: '88.65vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
     }
 })
 
@@ -18,11 +21,10 @@ function Weather(props) {
     const classes = weatherStyles();
 
     return (
-        <Grid container spacing={0} className={classes.weather}>
-            <Grid item xs={12} >
+        <div className={classes.weather}>
                 < Current city={city} current={current} daily={daily} />
-            </Grid>
-        </Grid>
+                < Hourly weatherData={weatherData} />
+        </div>
     )
 }
 
