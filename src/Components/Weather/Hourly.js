@@ -4,9 +4,8 @@ import { makeStyles } from '@mui/styles';
 // Helpers
 import unixToHuman from '../../HelperFunctions/UnixTime';
 
-// Icons
-import Sun from '../../Icons/Sun.svg'
-import MostlySunny from '../../Icons/MostlySunny.svg'
+// Weather Icons
+import WeatherIcons from '../../Icons/WeatherIcons/WeatherIcons.js';
 
 const hourlyStyles = makeStyles({
     hourly: {
@@ -65,8 +64,8 @@ const hourlyStyles = makeStyles({
 
     },
     icon: {
-        height: '30px',
-        width: '30px',
+        height: '60px',
+        width: '60px',
     }
 
 })
@@ -76,6 +75,7 @@ function Hourly(props) {
     const { weatherData } = props;
 
     console.log(weatherData.hourly[0])
+
 
     // Map each hour as a div
     const hours = weatherData.hourly.map((h, i) => {
@@ -89,7 +89,7 @@ function Hourly(props) {
                 <div className={classes.time}>
                     {hour}
                 </div>
-                <img className={classes.icon} src={MostlySunny} alt={h.weather[0].description} />
+                <img className={classes.icon} src={WeatherIcons[h.weather[0].icon]} alt={h.weather[0].description} />
                 <div className={classes.temp}>
                     {Math.trunc(h.temp)}
                 </div>

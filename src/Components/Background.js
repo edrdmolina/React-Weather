@@ -16,7 +16,7 @@ const backgroundStyles = makeStyles({
         position: 'absolute',
         minHeight: '100vh',
         width: '100vw',
-        background: 'linear-gradient(180deg, rgba(150, 150, 255, 1), rgba(150, 150, 255, 1), rgba(255,150,150,1))', 
+        background: 'linear-gradient(180deg, rgba(50, 50, 150, 1), rgba(150, 150, 255, 1), rgba(255,150,150,1))', 
         zIndex: '-1',
     },
     sun: {
