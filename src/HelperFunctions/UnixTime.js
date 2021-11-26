@@ -1,6 +1,8 @@
 // Write function that takes in unix time and converts to hour of the day
-export default function unixToHuman(dt = Date.now(), format = undefined) {    
-    let daysOfMonth = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+export default function unixToHuman(dt = Date.now(), timeZone = 0, format = undefined) {    
+    const daysOfMonth = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+    // Offset the date-time variable with your timezone.
+    dt += timeZone;
     // Calculate days since Jan 1st 1970
     let daysTillDt = parseInt(dt / (24 * 60 * 60), 10)
     let extraTime = dt % (24 * 60 * 60);

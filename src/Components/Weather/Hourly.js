@@ -73,17 +73,22 @@ const hourlyStyles = makeStyles({
 function Hourly(props) {
     const classes = hourlyStyles();
     const { weatherData } = props;
+        
+    const timezoneOffset = weatherData.timezone_offset;
+    const sunrise = unixToHuman(weatherData.current.sunrise, timezoneOffset);
+    const sunset = unixToHuman(weatherData.current.sunset, timezoneOffset);
 
-    console.log(weatherData.hourly[0])
-
+    console.log(sunrise)
+    console.log(sunset)
 
     // Map each hour as a div
     const hours = weatherData.hourly.map((h, i) => {
         
-        let hour = unixToHuman(h.dt, 'hour');
+        let hour = unixToHuman(h.dt, timezoneOffset, 'hour');
         if(hour === 0) hour = '12AM';
         else if(hour > 12) hour = String(hour - 12) + 'PM'
         else hour = String(hour + 'AM')
+
         return (
             <div key={i} className={classes.hour}>
                 <div className={classes.time}>
