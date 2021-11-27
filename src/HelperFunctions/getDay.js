@@ -1,7 +1,7 @@
 // Write a function that returns the day of the week when given the month, day and year
 // https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/
 export default function getDay(month, date, year) {
-    const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
     //> Find Year Code
     // get last two digits of year

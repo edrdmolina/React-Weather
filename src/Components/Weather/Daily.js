@@ -50,7 +50,7 @@ const dailyStyles = makeStyles({
 
     },
     weekday: {
-        width: '20%',
+        width: '10%',
         paddingLeft: '1rem',
     },
 
@@ -66,11 +66,26 @@ const dailyStyles = makeStyles({
         display: 'grid',
         gridTemplateRows: '1fr 1fr',
         gridTemplateColumns: '1fr 1fr 1fr',
-        width: '70%',
+        width: '80%',
     },
     temp: {
         textAlign: 'center'
-    }
+    },
+    '@media (max-width: 576px)': {
+        daily: {
+            height: '740px'
+        },
+        forecast: {
+            height: '700px'
+        },
+        temps: {
+            gridTemplateRows: '1fr 1fr 1fr',
+            gridTemplateColumns: '1fr 1fr',
+            height: '85%',
+            width: '60%',
+            margin: '0 auto 0 auto',
+        }
+    },
     
 })
 
