@@ -75,12 +75,7 @@ function Hourly(props) {
     const { weatherData } = props;
         
     const timezoneOffset = weatherData.timezone_offset;
-    const sunrise = unixToHuman(weatherData.current.sunrise, timezoneOffset);
-    const sunset = unixToHuman(weatherData.current.sunset, timezoneOffset);
-
-    console.log(sunrise)
-    console.log(sunset)
-
+    
     // Map each hour as a div
     const hours = weatherData.hourly.map((h, i) => {
         

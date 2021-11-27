@@ -3,6 +3,8 @@ import { makeStyles } from '@mui/styles';
 // Components
 import Current from "./Weather/Current";
 import Hourly from './Weather/Hourly';
+import Daily from './Weather/Daily';
+
 // Styles
 const weatherStyles = makeStyles({
     weather: {
@@ -24,6 +26,7 @@ function Weather(props) {
         <div className={classes.weather}>
                 < Current city={city} current={current} daily={daily} />
                 < Hourly weatherData={weatherData} />
+                < Daily weatherData={weatherData} />
         </div>
     )
 }

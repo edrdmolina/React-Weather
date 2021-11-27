@@ -13,7 +13,7 @@ import { makeStyles } from '@mui/styles';
 // Styles
 const backgroundStyles = makeStyles({
     background: {
-        position: 'absolute',
+        position: 'fixed',
         minHeight: '100vh',
         width: '100vw',
         background: 'linear-gradient(180deg, rgba(50, 50, 150, 1), rgba(150, 150, 255, 1), rgba(255,150,150,1))', 
@@ -31,6 +31,7 @@ const backgroundStyles = makeStyles({
 
 function Background(props) {
     const classes = backgroundStyles();
+    
     return (
         <div className={classes.background}>
             {/* <img src={Sun} className={classes.sun} alt='Sun' />
