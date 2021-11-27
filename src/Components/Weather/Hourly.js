@@ -1,6 +1,9 @@
 // Hooks
 import { makeStyles } from '@mui/styles';
 
+// Components
+
+
 // Helpers
 import unixToHuman from '../../HelperFunctions/UnixTime';
 
@@ -23,7 +26,7 @@ const hourlyStyles = makeStyles({
         boxShadow: '3px 3px 10px rgba(0,0,0,0.5)'
     },
     tag: {
-        height: '20%',
+        height: '40px',
         width: '100%',
         display: 'flex',
         flexDirection: 'row',
@@ -37,9 +40,9 @@ const hourlyStyles = makeStyles({
     forecast: {
         display: 'flex',
         flexDirection: 'row',
-        height: '78%',
-        width: '99%',
-        borderTop: 'solid 1px white',
+        height: '160px',
+        width: '95%',
+        borderTop: 'solid 1px rgba(255,255,255,0.5)',
         overflowX: 'scroll',
 
         '&::-webkit-scrollbar': {
@@ -91,7 +94,7 @@ function Hourly(props) {
                 </div>
                 <img className={classes.icon} src={WeatherIcons[h.weather[0].icon]} alt={h.weather[0].description} />
                 <div className={classes.temp}>
-                    {Math.trunc(h.temp)}
+                    {Math.trunc(h.temp)}°
                 </div>
             </div>
         )

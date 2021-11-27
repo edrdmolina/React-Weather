@@ -8,7 +8,7 @@ import Daily from './Weather/Daily';
 // Styles
 const weatherStyles = makeStyles({
     weather: {
-        marginTop: '2rem',
+        margin: '2rem 0',
         minHeight: '88.65vh',
         display: 'flex',
         flexDirection: 'column',
