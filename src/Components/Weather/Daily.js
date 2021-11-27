@@ -55,8 +55,10 @@ const dailyStyles = makeStyles({
     },
 
     icon: {
-        width: '10%',
-
+        width: '20%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         '& img': {
             height: '60px',
             width: '60px',
@@ -66,7 +68,7 @@ const dailyStyles = makeStyles({
         display: 'grid',
         gridTemplateRows: '1fr 1fr',
         gridTemplateColumns: '1fr 1fr 1fr',
-        width: '80%',
+        width: '70%',
     },
     temp: {
         textAlign: 'center'
