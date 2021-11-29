@@ -19,8 +19,8 @@ const SunsetStyles = makeStyles({
         color: 'white',
     },
     icon: {
-        height: '25px',
-        width: '25px'
+        height: '30px',
+        width: '30px'
     },
     tag: {
         color: 'rgba(225,225,225,1.0)',
