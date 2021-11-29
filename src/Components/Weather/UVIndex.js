@@ -12,7 +12,7 @@ const uvIndexStyles = makeStyles({
         backgroundColor: 'rgba(15,75,255,0.15)',
         boxShadow: '3px 3px 10px rgba(0,0,0,0.5)',
         borderRadius: '10px',
-        margin: '2rem 0',
+        margin: '1rem 0',
         color: 'white',
     },
     tag: {
@@ -37,7 +37,7 @@ const uvIndexStyles = makeStyles({
         justifyContent: 'space-evenly',
         width: '90%',
         maxHeight: '210px',
-        aspectRatio: '1 / 1',
+        aspectRatio: '1.25 / 1',
         margin: '0 auto',
     },
     index: {
