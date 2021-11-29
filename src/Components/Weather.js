@@ -9,6 +9,7 @@ import FeelsLike from './Weather/FeelsLike';
 import Sunrise from './Weather/Sunrise';
 import Sunset from './Weather/Sunset';
 import Wind from './Weather/Wind';
+import Humidity from './Weather/Humidity';
 
 // Styles
 const weatherStyles = makeStyles({
@@ -43,9 +44,10 @@ function Weather(props) {
                 <div className={classes.squares}>
                     < UVIndex uvi={current.uvi} /> 
                     < FeelsLike feelsLike={current.feels_like} />
+                    < Wind current={current} unit={unit} />
+                    < Humidity current={current} />
                     < Sunrise weatherData={weatherData} />
                     < Sunset weatherData={weatherData} />
-                    < Wind current={current} unit={unit} />
                 </div>
         </div>
     )
