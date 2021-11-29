@@ -18,7 +18,7 @@ const weatherStyles = makeStyles({
     },
     squares: {
         width: '90%',
-        maxWidth: '500px',
+        maxWidth: '800px',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',

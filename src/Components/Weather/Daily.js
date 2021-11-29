@@ -14,7 +14,7 @@ import WeatherIcons from '../../Icons/WeatherIcons/WeatherIcons.js';
 const dailyStyles = makeStyles({
     daily: {
         width: '90%',
-        maxWidth: '500px',
+        maxWidth: '800px',
         height: '540px',
         color: 'white',
         backgroundColor: 'rgba(15,75,255,0.15)',

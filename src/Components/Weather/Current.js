@@ -21,11 +21,11 @@ const currentStyles = makeStyles({
 
     },
     temp: {
-        fontSize: '60px',
+        fontSize: '80px',
         margin: '0.25rem 1rem 0.25rem 30px',
     },
     weather: {
-        fontSize: '20px',
+        fontSize: '30px',
         margin: '0.25rem 1rem'
     },
     highLow: {
