@@ -2,7 +2,7 @@
 import { makeStyles } from '@mui/styles';
 
 // Components
-
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 // Helpers
 import unixToHuman from '../../HelperFunctions/UnixTime';
@@ -26,6 +26,7 @@ const hourlyStyles = makeStyles({
         boxShadow: '3px 3px 10px rgba(0,0,0,0.5)'
     },
     tag: {
+        color: 'rgba(225,225,225,1.0)',
         height: '40px',
         width: '100%',
         display: 'flex',
@@ -36,6 +37,9 @@ const hourlyStyles = makeStyles({
         '& span': {
             marginLeft: '1rem'
         }
+    },
+    tagIcon: {
+        verticalAlign: 'bottom',
     },
     forecast: {
         display: 'flex',
@@ -103,7 +107,9 @@ function Hourly(props) {
     return (
         <div className={classes.hourly}>
             <div className={classes.tag}>
-                <span>Hourly Forecast</span>
+                <span>
+                < AccessTimeIcon fontSize='small' className={classes.tagIcon} /> Hourly Forecast
+                </span>
             </div>
             <div className={classes.forecast}>
                 {hours}

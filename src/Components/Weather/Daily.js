@@ -1,6 +1,9 @@
 // Hooks
 import { makeStyles } from '@mui/styles';
 
+// Components
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+
 // Helpers
 import unixToHuman from '../../HelperFunctions/UnixTime';
 import getDay from '../../HelperFunctions/getDay';
@@ -24,6 +27,7 @@ const dailyStyles = makeStyles({
 
     },
     tag: {
+        color: 'rgba(225,225,225,1.0)',
         height: '40px',
         width: '100%',
         display: 'flex',
@@ -33,6 +37,9 @@ const dailyStyles = makeStyles({
         '& span': {
             marginLeft: '1rem'
         }
+    },
+    tagIcon: {
+        verticalAlign: 'bottom',
     },
     forecast: {
         display: 'flex',
@@ -139,7 +146,9 @@ function Daily(props) {
     return (
         <div className={classes.daily}>
             <div className={classes.tag}>
-                <span>8 Day Forecast</span>
+                <span>
+                    < CalendarTodayIcon fontSize='small' className={classes.tagIcon} /> 8 Day Forecast
+                </span>
             </div>
             <div className={classes.forecast}>
                 {days}

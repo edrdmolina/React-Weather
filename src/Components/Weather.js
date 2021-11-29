@@ -4,6 +4,8 @@ import { makeStyles } from '@mui/styles';
 import Current from "./Weather/Current";
 import Hourly from './Weather/Hourly';
 import Daily from './Weather/Daily';
+import UVIndex from './Weather/UVIndex';
+import FeelsLike from './Weather/FeelsLike';
 
 // Styles
 const weatherStyles = makeStyles({
@@ -13,6 +15,14 @@ const weatherStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center'
+    },
+    squares: {
+        width: '90%',
+        maxWidth: '500px',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
     }
 })
 
@@ -27,6 +37,10 @@ function Weather(props) {
                 < Current city={city} current={current} daily={daily} />
                 < Hourly weatherData={weatherData} />
                 < Daily weatherData={weatherData} />
+                <div className={classes.squares}>
+                    < UVIndex uvi={current.uvi} /> 
+                    < FeelsLike feelsLike={current.feels_like} />
+                </div>
         </div>
     )
 }
