@@ -38,12 +38,15 @@ const WindStyles = makeStyles({
         aspectRatio: '1.25 / 1',
         backgroundImage: `url(${Compass})`,
         backgroundSize: '100% 100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     arrow: {
         width: '100%',
         aspectRatio: '1.25 / 1',
         backgroundImage: `url(${CompassArrow})`,
-        backgroundSize: '99% 99%',
+        backgroundSize: '100% 100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -63,10 +66,14 @@ const WindStyles = makeStyles({
 
 function Wind(props) {
     const classes = WindStyles();
-    const { current } = props;
+    const { current, unit } = props;
 
     const deg = current.wind_deg
     const speed = current.wind_speed;
+    
+    let unitOfMeasurement = '';
+    if(unit === 'imperial') unitOfMeasurement = 'mph';
+    else unitOfMeasurement = 'kph'
 
     return (
         <div className={classes.box}>
@@ -78,9 +85,9 @@ function Wind(props) {
             <div className={classes.wind}>
                 <div className={classes.arrow} style={{transform: `rotate(${deg}deg)`}}>
                     <div className={classes.speed} style={{transform: `rotate(-${deg}deg)`}} >
-                        {speed}
+                        {speed} <br />
+                        {unitOfMeasurement}
                     </div>
-
                 </div>
             </div>
         </div>

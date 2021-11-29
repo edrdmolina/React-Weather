@@ -99,14 +99,14 @@ export class App extends Component {
     
     render() {
         const { updateLocationData } = this;
-        const { weatherData, locationData, hasWeather } = this.state;
+        const { weatherData, locationData, hasWeather, unit } = this.state;
 
         return (
             <div>
                 < Background />
                 < Search updateLocationData={updateLocationData} />
                 { hasWeather ? (
-                    < Weather locationData={locationData} weatherData={weatherData} />
+                    < Weather locationData={locationData} weatherData={weatherData} unit={unit} />
                 ) : (
                     < Loading />
                 )}

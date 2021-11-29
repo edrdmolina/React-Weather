@@ -30,7 +30,7 @@ const weatherStyles = makeStyles({
 })
 
 function Weather(props) {
-    const { locationData, weatherData } = props;
+    const { locationData, weatherData, unit } = props;
     const { city } = locationData;
     const { current, daily } = weatherData;
     const classes = weatherStyles();
@@ -45,7 +45,7 @@ function Weather(props) {
                     < FeelsLike feelsLike={current.feels_like} />
                     < Sunrise weatherData={weatherData} />
                     < Sunset weatherData={weatherData} />
-                    < Wind current={current} />
+                    < Wind current={current} unit={unit} />
                 </div>
         </div>
     )
