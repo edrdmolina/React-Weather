@@ -2,7 +2,7 @@
 import { makeStyles } from '@mui/styles';
 
 // Icons
-import WindIcon from '../../Icons/WindIcon.svg';
+import WindIcon from '../../Icons/TagIcons/WindIcon.svg';
 import Compass from '../../Icons/Compass.svg';
 import CompassArrow from '../../Icons/CompassArrow.svg';
 

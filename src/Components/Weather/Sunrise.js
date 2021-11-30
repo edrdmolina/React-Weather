@@ -5,7 +5,7 @@ import { makeStyles } from '@mui/styles';
 import unixToHuman from '../../HelperFunctions/UnixTime';
 
 // Icons
-import SunriseIcon from '../../Icons/SunriseIcon.svg'
+import SunriseIcon from '../../Icons/TagIcons/SunriseIcon.svg'
 
 const SunsetStyles = makeStyles({
     box: {

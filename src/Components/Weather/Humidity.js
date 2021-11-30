@@ -2,7 +2,7 @@
 import { makeStyles } from '@mui/styles';
 
 // Icons
-import HumidityIcon from '../../Icons/HumidityIcon.svg'
+import HumidityIcon from '../../Icons/TagIcons/HumidityIcon.svg'
 
 const HumidityStyles = makeStyles({
     box: {
