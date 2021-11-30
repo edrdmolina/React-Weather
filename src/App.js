@@ -103,7 +103,7 @@ export class App extends Component {
 
         return (
             <div>
-                < Background />
+                < Background weatherData={weatherData} hasWeather={hasWeather} />
                 < Search updateLocationData={updateLocationData} />
                 { hasWeather ? (
                     < Weather locationData={locationData} weatherData={weatherData} unit={unit} />

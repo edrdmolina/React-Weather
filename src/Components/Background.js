@@ -1,14 +1,8 @@
 // Hooks
 import { makeStyles } from '@mui/styles';
 
-// Icons
-// import Sun from '../Icons/Sun.svg';
-// import HeavyRain from '../Icons/HeavyRain.svg';
-// import Lightning from '../Icons/Lightning.svg';
-// import LightRain from '../Icons/LightRain.svg';
-// import MostlyCloudy from '../Icons/MostlyCloudy.svg';
-// import MostlySunny from '../Icons/MostlySunny.svg';
-// import Stars from '../Icons/Stars.svg';
+// Component
+import BackgroundAnimation from './BackgroundAnimation';
 
 // Styles
 const backgroundStyles = makeStyles({
@@ -16,40 +10,65 @@ const backgroundStyles = makeStyles({
         position: 'fixed',
         minHeight: '100vh',
         width: '100vw',
-        background: 'linear-gradient(180deg, rgba(50, 50, 150, 1), rgba(150, 150, 255, 1), rgba(255,150,150,1))', 
-        zIndex: '-1',
+        zIndex: '-2',
     },
-    sun: {
-        height: '100px',
-        width: '100px'
-    },
-    stars: {
-        height: '100px',
-        width: '75px'
-    }
 })
 
 function Background(props) {
     const classes = backgroundStyles();
+    const { weatherData, hasWeather } = props;
     
-    return (
-        <div className={classes.background}>
-            {/* <img src={Sun} className={classes.sun} alt='Sun' />
-            <img src={Stars} className={classes.stars} alt='Stars' />
-            <img src={Stars} className={classes.stars} alt='Stars' />
-            <img src={Stars} className={classes.stars} alt='Stars' />
-            <img src={Stars} className={classes.stars} alt='Stars' />
-            <img src={Stars} className={classes.stars} alt='Stars' />
-            <img src={Stars} className={classes.stars} alt='Stars' />
-            <img src={Stars} className={classes.stars} alt='Stars' />
-            <img src={Stars} className={classes.stars} alt='Stars' /> */}
-            {/* <img src={HeavyRain} alt='HeavyRain' />
-            <img src={LightRain} alt='LightRain' />
-            <img src={Lightning} alt='Lightning' />
-            <img src={MostlyCloudy} alt='MostlyCloudy' />
-            <img src={MostlySunny} alt='MostlySunny' /> */}
-        </div>
-    )
+    if(hasWeather) {
+        let { dt, sunset, sunrise } = weatherData.current;
+
+        // dt += 8000;
+
+        const style = { background: '' }
+
+        if(isDay(dt, sunrise, sunset)) style.background = 'linear-gradient(180deg, rgba(100, 100, 200, 1), rgba(150, 150, 255, 1))';
+        else if(isNight(dt, sunrise, sunset)) style.background = 'linear-gradient(180deg, rgba(20, 20, 80, 1), rgba(30, 30, 80, 1))';
+        else if(isSunset(dt, sunset)) style.background = 'linear-gradient(180deg, rgba(30, 30, 80, 1), rgba(100, 100, 200, 1), rgba(150, 50, 100, 1), rgba(255, 80, 80, 1))';
+        else if(isSunrise(dt, sunrise)) style.background = 'linear-gradient(0deg, rgba(30, 30, 80, 1), rgba(100, 100, 200, 1), rgba(150, 50, 100, 1), rgba(255, 80, 80, 1))';
+
+        return (
+            <div className={classes.background} style={style}>
+                < BackgroundAnimation code={weatherData.current.weather[0].icon} />
+            </div>
+        )
+    } else {
+        const style = {
+            background: 'linear-gradient(180deg, rgba(100, 100, 200, 1), rgba(150, 150, 255, 1))'
+        }
+        return (
+            <div className={classes.background} style={style} />
+
+        )
+    }
 }
 
+
 export default Background;
+
+function isDay(dt, sunrise, sunset) {
+    let sunriseDiff = dt - sunrise;
+    let sunsetDiff = sunset - dt;
+    if(sunriseDiff > 3600 && sunsetDiff > 3600) return true;
+    else return false;
+}
+
+function isNight(dt, sunrise, sunset) {
+    if(dt > sunset || dt < sunrise) return true;
+    else return false;
+}
+
+function isSunrise(dt, sunrise) {
+    let diff = dt - sunrise;
+    if(diff > 0 && diff < 3600) return true;
+    else return false;
+}
+
+function isSunset(dt, sunset) {
+    let diff = sunset - dt;
+    if(diff > 0 && diff < 3600) return true;
+    else return false;
+}
