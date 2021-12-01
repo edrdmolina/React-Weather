@@ -24,7 +24,7 @@ const ScatteredCloudsStyles = makeStyles({
     cloud2: { animation: '$slideRight 50s linear Infinite', position: 'absolute', transform: 'scale(0.8)', top: '50%', left: '25%',},
     cloud3: { animation: '$slideRight 58s linear Infinite', position: 'absolute', transform: 'scale(1.3)', top: '75%', left: '15%',},
     cloud4: { animation: '$slideRight 52s linear Infinite', position: 'absolute', transform: 'scale(0.9)', top: '100%', left: '5%',},
-    cloud5: { animation: '$slideRight 52s linear Infinite', position: 'absolute', transform: 'scale(1.1)', top: '55%', left: '-25%',},
+    cloud5: { animation: '$slideRight 52s linear Infinite', position: 'absolute', transform: 'scale(1.1)', top: '55%', left: '-5%',},
     cloud6: { animation: '$slideLeft 53s linear Infinite', position: 'absolute', transform: 'scale(1.2)', top: '25%', left: '30%',},
     cloud7: { animation: '$slideLeft 50s linear Infinite', position: 'absolute', transform: 'scale(0.8)', top: '50%', left: '40%',},
     cloud8: { animation: '$slideLeft 58s linear Infinite', position: 'absolute', transform: 'scale(1.3)', top: '75%', left: '55%',},
@@ -41,10 +41,12 @@ const ScatteredCloudsStyles = makeStyles({
     },
     '@keyframes slideLeft': {
         from: {
-            marginLeft: '100%'
+            marginLeft: '100%',
+            opacity: '1',
         },
         to: {
-            marginLeft: '-50%'
+            marginLeft: '-50%',
+            opacity: '0.25',
         }
     },
 })

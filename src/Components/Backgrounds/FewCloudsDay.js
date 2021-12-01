@@ -69,14 +69,16 @@ const FewCloudsDayStyles = makeStyles({
     cloud5: { 
         animation: '$slideRight 52s linear Infinite', 
         position: 'absolute', transform: 'scale(1.1)', 
-        top: '55%', left: '-25%',
+        top: '55%', left: '-5%',
     },
     '@keyframes slideRight': {
         from: {
-            marginLeft: '-50%'
+            marginLeft: '-50%',
+            opacity: '1',
         },
         to: {
-            marginLeft: '100%'
+            marginLeft: '100%',
+            opacity: '0.25',
         }
     },
 })
