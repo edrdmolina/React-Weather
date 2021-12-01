@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="14"
+   height="21"
+   viewBox="0 0 3.7041667 5.5562501"
+   version="1.1"
+   id="svg856"
+   inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
+   sodipodi:docname="RainDrop.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview858"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="true"
+     units="px"
+     width="25px"
+     inkscape:zoom="23.005387"
+     inkscape:cx="8.9326904"
+     inkscape:cy="9.9324562"
+     inkscape:window-width="2560"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1106" />
+  </sodipodi:namedview>
+  <defs
+     id="defs853" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1024"
+       style="fill:#5230db;fill-opacity:0.855549;stroke-width:0.529167;stroke-linejoin:round"
+       d="m 1.8520805,-2.6436906e-6 c 0,0 1.7921517,2.5836098436906 1.7949293,3.8886479436906 C 3.6497778,5.192547 2.12371,5.5294527 1.8700825,5.527987 1.594545,5.5263945 -0.00478396,5.1669983 -0.00977994,3.8642908 -0.01478955,2.5580579 1.8520834,0 1.8520834,0 Z"
+       sodipodi:nodetypes="cssscc" />
+  </g>
+</svg>
