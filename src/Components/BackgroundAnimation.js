@@ -1,56 +1,19 @@
 // Icons
-import Sun from '../Icons/Sun.svg';
-import Moon from '../Icons/Moon.svg';
 import LightCloud from '../Icons/LightCloud.svg';
 import DarkCloud from '../Icons/DarkCloud.svg';
 
 // Hooks
 import { makeStyles } from '@mui/styles';
 
+// Components
+import ClearDay from './Backgrounds/ClearDay';
+import ClearNight from './Backgrounds/ClearNight';
+import FewCloudsDay from './Backgrounds/FewCloudsDay';
+import FewCloudsNight from './Backgrounds/FewCloudsNight';
+import ScatteredClouds from './Backgrounds/ScatteredClouds';
+import BrokenClouds from './Backgrounds/BrokenClouds';
+
 const AnimationStyles = makeStyles({
-    '01d': {
-        position: 'fixed',
-        minHeight: '100vh',
-        width: '100vw',
-        zIndex: '-19',
-    },
-    '01n': {
-        position: 'fixed',
-        minHeight: '100vh',
-        width: '100vw',
-        zIndex: '-19',
-    },
-    sun: {
-        position: 'fixed',
-        height: '200px',
-        width: '200px',
-        right: '0',
-        animation: '$spinClockWise 60s linear Infinite',
-        boxShadow: 'inset 0px 0px 100px 100px rgba(255,255,255,.5), 0px 0px 100px 10px white',
-        borderRadius: '50%',
-        zIndex: '-18',
-    },
-    '@keyframes spinClockWise': {
-        from: {
-            transform: 'rotate(0deg)'
-        },
-        '50%' : {
-            transform: 'rotate(180deg)'
-        },
-        to: {
-            transform: 'rotate(360deg)'
-        }
-    },
-    moon: {
-        position: 'fixed',
-        height: '200px',
-        width: '200px',
-        right: '15px',
-        top: '15px',
-        boxShadow: 'inset 0px 0px 100px 100px rgba(255,255,255,.25), 0px 0px 75px 5px rgba(255,255,255,.5)',
-        borderRadius: '50%',
-        zIndex: '-18',
-    },
     // Cloud Movement
     clouds: {
         position: 'fixed',
@@ -86,48 +49,6 @@ const AnimationStyles = makeStyles({
             marginLeft: '-50%'
         }
     },
-    '02d': {
-        position: 'fixed',
-        minHeight: '100vh',
-        width: '100vw',
-        zIndex: '-19',
-        backgroundColor: 'rgba(0,0,0,0.1)'
-    },
-    '02n': {
-        position: 'fixed',
-        minHeight: '100vh',
-        width: '100vw',
-        zIndex: '-19',
-        backgroundColor: 'rgba(0,0,0,0.1)'
-    },
-    '03d': {
-        position: 'fixed',
-        minHeight: '100vh',
-        width: '100vw',
-        zIndex: '-19',
-        backgroundColor: 'rgba(0,0,0,0.20)'
-    },
-    '03n': {
-        position: 'fixed',
-        minHeight: '100vh',
-        width: '100vw',
-        zIndex: '-19',
-        backgroundColor: 'rgba(0,0,0,0.20)'
-    },
-    '04d': {
-        position: 'fixed',
-        minHeight: '100vh',
-        width: '100vw',
-        zIndex: '-19',
-        backgroundColor: 'rgba(0,0,0,0.35)'
-    },
-    '04n': {
-        position: 'fixed',
-        minHeight: '100vh',
-        width: '100vw',
-        zIndex: '-19',
-        backgroundColor: 'rgba(0,0,0,0.35)'
-    },
     '09d': {
         position: 'fixed',
         minHeight: '100vh',
@@ -148,134 +69,25 @@ function BackgroundAnimation(props) {
     const style = AnimationStyles();
     let { code } = props;
 
-    code = '09d'
+    code = '04d'
 
     switch(code) {
         case '01d':
-            console.log('clear day');
-            return (
-                <div className={style[code]}>
-                    <img src={Sun} alt='Sun' className={style.sun} />
-                </div>
-            )
+            return ( < ClearDay /> );
         case '01n':
-            console.log('clear night');
-            return (
-                <div className={style[code]}>
-                    <img src={Moon} alt='Moon' className={style.moon} />
-                </div>
-            )
+            return ( < ClearNight /> );
         case '02d':
-            console.log('few clouds day');
-
-            return (
-                <div className={style[code]}>
-                    <img src={Sun} alt='Sun' className={style.sun} />
-                    <div className={style.clouds}>
-                        <img src={LightCloud} alt='cloud' className={style.cloud0} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud1} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud2} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud3} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud4} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud5} />
-                    </div>
-                </div>
-            )
+            return ( < FewCloudsDay /> );
         case '02n':
-            console.log('few clouds night');
-            return (
-                <div className={style[code]}>
-                    <img src={Moon} alt='Moon' className={style.moon} />
-                    <div className={style.clouds}>
-                        <img src={LightCloud} alt='cloud' className={style.cloud0} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud1} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud2} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud3} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud4} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud5} />
-                    </div>
-                </div>
-            )
+            return ( <FewCloudsNight /> )
         case '03d':
-            console.log('scattered clouds day');
-            return (
-                <div className={style[code]}>
-                    <div className={style.clouds}>
-                        <img src={LightCloud} alt='cloud' className={style.cloud0} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud1} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud2} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud3} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud4} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud5} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud6} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud7} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud8} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud9} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud10} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud11} />
-                    </div>
-                </div>
-            )
+            return ( < ScatteredClouds /> )
         case '03n':
-            console.log('scattered clouds night');
-            return (
-                <div className={style[code]}>
-                    <div className={style.clouds}>
-                        <img src={LightCloud} alt='cloud' className={style.cloud0} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud1} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud2} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud3} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud4} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud5} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud6} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud7} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud8} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud9} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud10} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud11} />
-                    </div>
-                </div>
-            )
+            return ( < ScatteredClouds /> )
         case '04d':
-            console.log('broken clouds day');
-            return (
-                <div className={style[code]}>
-                    <div className={style.clouds}>
-                        <img src={LightCloud} alt='cloud' className={style.cloud0} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud1} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud2} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud3} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud4} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud5} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud6} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud7} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud8} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud9} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud10} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud11} />
-                    </div>
-                </div>
-            )
+            return ( < BrokenClouds /> )
         case '04n':
-            console.log('broken clouds night');
-            return (
-                <div className={style[code]}>
-                    <div className={style.clouds}>
-                        <img src={LightCloud} alt='cloud' className={style.cloud0} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud1} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud2} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud3} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud4} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud5} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud6} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud7} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud8} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud9} />
-                        <img src={DarkCloud} alt='cloud' className={style.cloud10} />
-                        <img src={LightCloud} alt='cloud' className={style.cloud11} />
-                    </div>
-                </div>
-            )
+            return ( < BrokenClouds /> )
         case '09d':
             console.log('shower rain day');
             return (
