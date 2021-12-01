@@ -10,7 +10,7 @@ const backgroundStyles = makeStyles({
         position: 'fixed',
         minHeight: '100vh',
         width: '100vw',
-        zIndex: '-2',
+        zIndex: '-20',
     },
 })
 
@@ -22,13 +22,14 @@ function Background(props) {
         let { dt, sunset, sunrise } = weatherData.current;
 
         // dt += 8000;
+        // dt += 3600;
 
         const style = { background: '' }
 
         if(isDay(dt, sunrise, sunset)) style.background = 'linear-gradient(180deg, rgba(100, 100, 200, 1), rgba(150, 150, 255, 1))';
         else if(isNight(dt, sunrise, sunset)) style.background = 'linear-gradient(180deg, rgba(20, 20, 80, 1), rgba(30, 30, 80, 1))';
-        else if(isSunset(dt, sunset)) style.background = 'linear-gradient(180deg, rgba(30, 30, 80, 1), rgba(100, 100, 200, 1), rgba(150, 50, 100, 1), rgba(255, 80, 80, 1))';
-        else if(isSunrise(dt, sunrise)) style.background = 'linear-gradient(0deg, rgba(30, 30, 80, 1), rgba(100, 100, 200, 1), rgba(150, 50, 100, 1), rgba(255, 80, 80, 1))';
+        else if(isSunset(dt, sunset)) style.background = 'linear-gradient(180deg, rgba(30, 30, 80, 1), rgba(100, 100, 200, 1), rgba(150, 50, 100, 1), rgba(150, 80, 80, 1))';
+        else if(isSunrise(dt, sunrise)) style.background = 'linear-gradient(0deg, rgba(30, 30, 80, 1), rgba(100, 100, 200, 1), rgba(150, 50, 100, 1), rgba(150, 80, 80, 1))';
 
         return (
             <div className={classes.background} style={style}>
