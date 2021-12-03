@@ -7,11 +7,12 @@ import ScatteredClouds from './Backgrounds/ScatteredClouds';
 import BrokenClouds from './Backgrounds/BrokenClouds';
 import ShowerRain from './Backgrounds/ShowerRain';
 import Lightning from './Backgrounds/Lightning';
+import SnowFall from './Backgrounds/SnowFall';
 
 function BackgroundAnimation(props) {
     let { code } = props;
 
-    code = '01d'
+    code = '13n'
 
     switch(code) {
         case '01d':
@@ -77,11 +78,19 @@ function BackgroundAnimation(props) {
                 </div>
             )
         case '13d':
-            console.log('snow day');
-            break;
+            return ( 
+                <div>
+                    < ScatteredClouds />
+                    < SnowFall />
+                </div>
+            )
         case '13n':
-            console.log('snow night');
-            break;
+            return ( 
+                <div>
+                    < ScatteredClouds />
+                    < SnowFall />
+                </div>
+            )
         case '50d':
             console.log('mist day');
             break;
