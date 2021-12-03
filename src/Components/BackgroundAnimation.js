@@ -11,7 +11,7 @@ import Lightning from './Backgrounds/Lightning';
 function BackgroundAnimation(props) {
     let { code } = props;
 
-    code = '11d'
+    code = '01d'
 
     switch(code) {
         case '01d':
@@ -69,8 +69,13 @@ function BackgroundAnimation(props) {
                 </div>
             )
         case '11n':
-            console.log('thunderstorm night');
-            break;
+            return ( 
+                <div>
+                    < BrokenClouds />
+                    < ShowerRain /> 
+                    < Lightning />
+                </div>
+            )
         case '13d':
             console.log('snow day');
             break;

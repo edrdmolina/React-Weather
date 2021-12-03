@@ -7,17 +7,21 @@ const lightningStyles = makeStyles({
         minHeight: '100vh',
         width: '100vw',
         zIndex: '-19',
-        animation: 'lightning 4s linear infinite',
+        backgroundColor: 'rgba(200,200,200,0.15)',
+        animation: '$flash 10s linear infinite',
     },
-    '@keyframes lightning': {
-        '0%' : { backgroundColor: 'rgba(255,255,255,0)'},
-        '20%' : { backgroundColor: 'rgba(255,255,255,0)'},
-        '21%' : { backgroundColor: 'rgba(255,255,255,0.5)'},
-        '25%' : { backgroundColor: 'rgba(255,255,255,0.5)'},
-        '30%' : { backgroundColor: 'rgba(255,255,255,0)'},
-        '31%' : { backgroundColor: 'rgba(255,255,255,0.5)'},
-        '35%' : { backgroundColor: 'rgba(255,255,255,0.5)'},
-        '100%' : { backgroundColor: 'rgba(255,255,255,0)'},
+    '@keyframes flash': {
+        '0%' : { opacity: '0' },
+        '20%' : { opacity: '0' },
+        '21%' : { opacity: '1' },
+        '22%' : { opacity: '0' },
+        '30%' : { opacity: '0' },
+        '31%' : { opacity: '1' },
+        '32%' : { opacity: '0' },
+        '80%' : { opacity: '0' },
+        '81%' : { opacity: '1' },
+        '82%' : { opacity: '0' },
+        '100%' : { opacity: '0' },
     } 
 })
 
