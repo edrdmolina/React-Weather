@@ -8,11 +8,12 @@ import BrokenClouds from './Backgrounds/BrokenClouds';
 import ShowerRain from './Backgrounds/ShowerRain';
 import Lightning from './Backgrounds/Lightning';
 import SnowFall from './Backgrounds/SnowFall';
+import Mist from './Backgrounds/Mist';
 
 function BackgroundAnimation(props) {
     let { code } = props;
 
-    code = '13n'
+    code = '50n'
 
     switch(code) {
         case '01d':
@@ -92,11 +93,19 @@ function BackgroundAnimation(props) {
                 </div>
             )
         case '50d':
-            console.log('mist day');
-            break;
+            return (
+                <div>
+                    < ClearDay />
+                    < Mist />
+                </div>
+            )
         case '50n':
-            console.log('mist night');
-            break;
+            return (
+                <div>
+                    < ClearNight />
+                    < Mist />
+                </div>
+            )
         default: 
             break;
     }

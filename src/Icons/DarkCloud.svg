@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="200"
+   width="400"
    height="200"
-   viewBox="0 0 52.916666 52.916668"
+   viewBox="0 0 105.83333 52.916668"
    version="1.1"
    id="svg1183"
    inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
@@ -28,7 +28,7 @@
      showguides="false"
      objecttolerance="6.7"
      inkscape:zoom="2.8756734"
-     inkscape:cx="65.549864"
+     inkscape:cx="176.82815"
      inkscape:cy="114.58186"
      inkscape:window-width="2560"
      inkscape:window-height="1016"
@@ -41,14 +41,142 @@
        id="grid1267" />
   </sodipodi:namedview>
   <defs
-     id="defs1180" />
+     id="defs1180">
+    <filter
+       inkscape:label="Blur Double"
+       inkscape:menu="Blurs"
+       inkscape:menu-tooltip="Overlays two copies with different blur amounts and modifiable blend and composite"
+       style="color-interpolation-filters:sRGB"
+       id="filter16259"
+       x="-0.48759014"
+       y="-0.73781338"
+       width="1.9751803"
+       height="2.4756268">
+      <feGaussianBlur
+         stdDeviation="5"
+         result="fbSourceGraphic"
+         id="feGaussianBlur16251" />
+      <feGaussianBlur
+         stdDeviation="0.01"
+         in="SourceGraphic"
+         result="result1"
+         id="feGaussianBlur16253" />
+      <feComposite
+         in2="result1"
+         operator="arithmetic"
+         in="fbSourceGraphic"
+         k2="0.5"
+         k3="0.5"
+         result="result2"
+         id="feComposite16255"
+         k1="0"
+         k4="0" />
+      <feBlend
+         in2="fbSourceGraphic"
+         mode="normal"
+         result="fbSourceGraphic"
+         id="feBlend16257" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix16279" />
+      <feGaussianBlur
+         id="feGaussianBlur16281"
+         stdDeviation="5"
+         result="fbSourceGraphic"
+         in="fbSourceGraphic" />
+      <feGaussianBlur
+         id="feGaussianBlur16283"
+         stdDeviation="0.01"
+         in="fbSourceGraphic"
+         result="result1" />
+      <feComposite
+         in2="result1"
+         id="feComposite16285"
+         operator="arithmetic"
+         in="fbSourceGraphic"
+         k2="0.5"
+         k3="0.5"
+         result="result2"
+         k1="0"
+         k4="0" />
+      <feBlend
+         in2="fbSourceGraphic"
+         id="feBlend16287"
+         mode="normal"
+         result="result3" />
+    </filter>
+    <filter
+       inkscape:label="Blur Double"
+       inkscape:menu="Blurs"
+       inkscape:menu-tooltip="Overlays two copies with different blur amounts and modifiable blend and composite"
+       style="color-interpolation-filters:sRGB;"
+       id="filter22876"
+       x="-0.2916581"
+       y="-0.56806298"
+       width="1.5833162"
+       height="2.136126">
+      <feGaussianBlur
+         stdDeviation="5"
+         result="fbSourceGraphic"
+         id="feGaussianBlur22868" />
+      <feGaussianBlur
+         stdDeviation="0.01"
+         in="SourceGraphic"
+         result="result1"
+         id="feGaussianBlur22870" />
+      <feComposite
+         in2="result1"
+         operator="arithmetic"
+         in="fbSourceGraphic"
+         k2="0.5"
+         k3="0.5"
+         result="result2"
+         id="feComposite22872" />
+      <feBlend
+         in2="fbSourceGraphic"
+         mode="normal"
+         result="fbSourceGraphic"
+         id="feBlend22874" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix22896" />
+      <feGaussianBlur
+         id="feGaussianBlur22898"
+         stdDeviation="5"
+         result="fbSourceGraphic"
+         in="fbSourceGraphic" />
+      <feGaussianBlur
+         id="feGaussianBlur22900"
+         stdDeviation="0.01"
+         in="fbSourceGraphic"
+         result="result1" />
+      <feComposite
+         in2="result1"
+         id="feComposite22902"
+         operator="arithmetic"
+         in="fbSourceGraphic"
+         k2="0.5"
+         k3="0.5"
+         result="result2" />
+      <feBlend
+         in2="fbSourceGraphic"
+         id="feBlend22904"
+         mode="normal"
+         result="result3" />
+    </filter>
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       id="path1291"
-       style="fill:#7e7e7e;fill-opacity:0.90438658;stroke:none;stroke-width:0.529168;stroke-linejoin:round"
-       d="m 21.108389,9.9568653 a 9.5458283,10.109206 0 0 0 -9.545829,10.1092057 9.5458283,10.109206 0 0 0 0.138589,1.686842 9.5458283,10.109206 0 0 0 -0.138589,-0.002 9.5458283,10.109206 0 0 0 -9.5458267,10.109206 9.5458283,10.109206 0 0 0 9.5458267,10.109206 9.5458283,10.109206 0 0 0 5.370772,-1.752658 9.5458283,10.109206 0 0 0 6.091059,2.333806 9.5458283,10.109206 0 0 0 5.805181,-2.090948 9.5458283,10.109206 0 0 0 5.006588,1.5098 9.5458283,10.109206 0 0 0 3.976808,-0.925361 9.5458283,10.109206 0 0 0 3.978049,0.925361 9.5458283,10.109206 0 0 0 9.545828,-10.109174 9.5458283,10.109206 0 0 0 -8.06983,-9.987448 9.5458283,10.109206 0 0 0 -9.430855,-8.546096 9.5458283,10.109206 0 0 0 -4.680315,1.302481 9.5458283,10.109206 0 0 0 -8.047456,-4.6722167 z" />
+       id="path21934-6"
+       style="fill:#646464;fill-opacity:0.902376;stroke-width:0.800349;stroke-linejoin:round;filter:url(#filter22876)"
+       d="m 94.358955,35.715723 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z M 91.418487,24.264492 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z m -35.85599,-8.389493 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.2604173 9.260417,9.260417 0 0 1 9.260417,9.2604173 z m 29.16605,0.849625 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.2604177 9.260417,9.260417 0 0 1 9.260417,9.2604177 z m -54.301466,8.410793 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z m 13.229166,2.645832 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z M 39.687499,17.197917 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.2604174 9.260417,9.260417 0 0 1 9.260417,9.2604174 z m 23.812498,11.90625 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z m -7.9375,-6.614584 A 9.260417,9.260417 0 0 1 46.30208,31.75 a 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z m 13.229168,-1.322916 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z m 15.875,5.291666 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z m 0,13.229166 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z m -13.229168,-3.96875 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z m -13.229168,1.322918 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z m -11.906246,0 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z M 33.072915,35.718749 a 9.260417,9.260417 0 0 1 -9.260417,9.260417 9.260417,9.260417 0 0 1 -9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,-9.260417 9.260417,9.260417 0 0 1 9.260417,9.260417 z"
+       transform="matrix(0.80135096,0,0,0.5455113,9.9683829,11.904598)" />
   </g>
 </svg>

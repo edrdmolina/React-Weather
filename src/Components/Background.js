@@ -22,7 +22,7 @@ function Background(props) {
         let { dt, sunset, sunrise } = weatherData.current;
 
         // Night
-        dt += 8000;
+        // dt += 8000;
         // Sunset
         // dt += 3600;
         // Sunrise

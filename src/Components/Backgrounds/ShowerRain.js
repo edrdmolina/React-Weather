@@ -61,7 +61,7 @@ function ShowerRain() {
         const dropStyles = {
             left: `${randomHundred}%`,
             bottom: `${randomFive + randomFive - 1 + 100}%`,
-            animationDelay: `0.${randomHundred}s`,
+            animationDelay: `0.${randomFive}s`,
             animationDuration: `0.5${randomHundred}s`
         }
 
@@ -79,7 +79,7 @@ function ShowerRain() {
         const dropStyles = {
             right: `${randomHundred}%`,
             bottom: `${randomFive + randomFive - 1 + 100}%`,
-            animationDelay: `0.${randomHundred}s`,
+            animationDelay: `${randomFive}s`,
             animationDuration: `0.5${randomHundred}s`
         }
 
