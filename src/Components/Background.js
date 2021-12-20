@@ -21,12 +21,6 @@ function Background(props) {
     if(hasWeather) {
         let { dt, sunset, sunrise } = weatherData.current;
 
-        // Night
-        // dt += 8000;
-        // Sunset
-        // dt += 3600;
-        // Sunrise
-        // dt -= 35000;
         const style = { background: '' }
 
         if(isDay(dt, sunrise, sunset)) style.background = 'linear-gradient(180deg, rgba(100, 100, 200, 1), rgba(150, 150, 255, 1))';
