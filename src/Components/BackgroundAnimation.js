@@ -13,7 +13,7 @@ import Mist from './Backgrounds/Mist';
 function BackgroundAnimation(props) {
     let { code } = props;
 
-    code = '50n'
+    code = '11d'
 
     switch(code) {
         case '01d':

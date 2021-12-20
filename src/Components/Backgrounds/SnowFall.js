@@ -35,7 +35,7 @@ const snowFallStyles = makeStyles({
 function SnowFall() {
     const styles= snowFallStyles();
 
-    const snowFlakes = new Array(25).fill('❅').map((flake,i) => {
+    const snowFlakes = new Array(20).fill('❅').map((flake,i) => {
         const style = { 
             left: `${getRand(1,98)}vw`,
             animationDelay: `${getRand(1,20)}s` 

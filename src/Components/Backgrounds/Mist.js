@@ -31,7 +31,7 @@ const mistStyles = makeStyles({
 function Mist() {
     const styles = mistStyles();
 
-    const mistOne = new Array(50).fill(LightCloud).map((c,i) => {
+    const mistOne = new Array(15).fill(LightCloud).map((c,i) => {
         const style = {
             top: `${getRand(1,85) - 10}vh`,
             left: `${getRand(1,85) + 100}vw`,
@@ -43,13 +43,14 @@ function Mist() {
     })
     const mistTwo = new Array(50).fill(LightCloud).map((c,i) => {
         const style = {
+            position: 'fixed',
             top: `${getRand(1,85) - 10}vh`,
-            left: `${getRand(1,85) + 100}vw`,
-            animationDelay: '25s',
+            left: `${getRand(1,85) -10}vw`,
+            // animationDelay: '25s',
         }
 
         return (
-            <img src={c} alt='Mist' className={styles.cloud} style={style} key={i} />
+            <img src={c} alt='Mist' style={style} key={i} />
         )
     })
 
