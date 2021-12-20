@@ -1,5 +1,6 @@
 // Hooks
 import { makeStyles } from '@mui/styles';
+import { useState } from 'react';
 // Components
 import Current from "./Weather/Current";
 import Hourly from './Weather/Hourly';
@@ -10,12 +11,13 @@ import Sunrise from './Weather/Sunrise';
 import Sunset from './Weather/Sunset';
 import Wind from './Weather/Wind';
 import Humidity from './Weather/Humidity';
+import ToggleSearch from './ToggleSearch';
+import Search from './Search';
 
 // Styles
 const weatherStyles = makeStyles({
     weather: {
-        margin: '2rem 0',
-        minHeight: '88.65vh',
+        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center'
@@ -31,24 +33,37 @@ const weatherStyles = makeStyles({
 })
 
 function Weather(props) {
-    const { locationData, weatherData, unit } = props;
+    const [showSearch, toggleShowSearch] = useState(false);
+    const { locationData, weatherData, unit, updateLocationData } = props;
     const { city } = locationData;
     const { current, daily } = weatherData;
     const classes = weatherStyles();
 
+    function toggleSearch() {
+        toggleShowSearch(!showSearch)
+    }
+
     return (
         <div className={classes.weather}>
-                < Current city={city} current={current} daily={daily} />
-                < Hourly weatherData={weatherData} />
-                < Daily weatherData={weatherData} />
-                <div className={classes.squares}>
-                    < UVIndex uvi={current.uvi} /> 
-                    < FeelsLike feelsLike={current.feels_like} />
-                    < Wind current={current} unit={unit} />
-                    < Humidity current={current} />
-                    < Sunrise weatherData={weatherData} />
-                    < Sunset weatherData={weatherData} />
-                </div>
+            {showSearch ? (
+                < Search 
+                toggleFunction={toggleSearch} 
+                updateLocationData={updateLocationData}
+                /> 
+            ) : (
+                <ToggleSearch toggleFunction={toggleSearch} /> 
+            )}
+            < Current city={city} current={current} daily={daily} />
+            < Hourly weatherData={weatherData} />
+            < Daily weatherData={weatherData} />
+            <div className={classes.squares}>
+                < UVIndex uvi={current.uvi} /> 
+                < FeelsLike feelsLike={current.feels_like} />
+                < Wind current={current} unit={unit} />
+                < Humidity current={current} />
+                < Sunrise weatherData={weatherData} />
+                < Sunset weatherData={weatherData} />
+            </div>
         </div>
     )
 }

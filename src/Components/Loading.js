@@ -1,3 +1,6 @@
+// Components
+import Search from './Search';
+
 // Hooks
 import { makeStyles } from '@mui/styles';
 
@@ -7,11 +10,14 @@ import Sun from '../Icons/Sun.svg'
 // Styles
 const loadingStyles = makeStyles({
     loading: {
+        height: '100vh',
+    },
+    content: {
         display: 'flex',
-        height: '80vh',
+        height: '100%',
         flexDirection: 'column',
-        alignItems: 'center',
         justifyContent: 'center',
+        alignItems: 'center',
     },
     heading: {
         color: 'whitesmoke',
@@ -37,13 +43,16 @@ const loadingStyles = makeStyles({
 })
 
 function Loading(props) {
-    
+    const { updateLocationData } = props;
     const classes = loadingStyles();
 
     return (
         <div className={classes.loading}>
-            <h1 className={classes.heading}>React-Weather</h1>
-            <img className={classes.spinner} src={Sun} alt='Sun'/>
+            < Search updateLocationData={updateLocationData} />
+            <div className={classes.content}>
+                <h1 className={classes.heading}>React-Weather</h1>
+                <img className={classes.spinner} src={Sun} alt='Sun'/>
+            </div>
         </div>
     )
 }
