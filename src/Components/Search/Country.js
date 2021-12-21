@@ -24,7 +24,7 @@ export default function Country(props) {
     return (
         <Autocomplete
             onChange={handleChange}
-            sx={{ width: 125 }}
+            sx={{ width: '35%' }}
             options={countries}
             autoHighlight
             getOptionLabel={(option) => option.code}

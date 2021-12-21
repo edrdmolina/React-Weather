@@ -1,6 +1,3 @@
-// Components
-import Search from './Search';
-
 // Hooks
 import { makeStyles } from '@mui/styles';
 
@@ -48,7 +45,6 @@ function Loading(props) {
 
     return (
         <div className={classes.loading}>
-            < Search updateLocationData={updateLocationData} />
             <div className={classes.content}>
                 <h1 className={classes.heading}>React-Weather</h1>
                 <img className={classes.spinner} src={Sun} alt='Sun'/>

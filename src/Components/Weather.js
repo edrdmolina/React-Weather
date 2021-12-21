@@ -1,6 +1,5 @@
 // Hooks
 import { makeStyles } from '@mui/styles';
-import { useState } from 'react';
 // Components
 import Current from "./Weather/Current";
 import Hourly from './Weather/Hourly';
@@ -11,8 +10,6 @@ import Sunrise from './Weather/Sunrise';
 import Sunset from './Weather/Sunset';
 import Wind from './Weather/Wind';
 import Humidity from './Weather/Humidity';
-import ToggleSearch from './ToggleSearch';
-import Search from './Search';
 
 // Styles
 const weatherStyles = makeStyles({
@@ -33,26 +30,13 @@ const weatherStyles = makeStyles({
 })
 
 function Weather(props) {
-    const [showSearch, toggleShowSearch] = useState(false);
-    const { locationData, weatherData, unit, updateLocationData } = props;
+    const { locationData, weatherData, unit } = props;
     const { city } = locationData;
     const { current, daily } = weatherData;
     const classes = weatherStyles();
 
-    function toggleSearch() {
-        toggleShowSearch(!showSearch)
-    }
-
     return (
         <div className={classes.weather}>
-            {showSearch ? (
-                < Search 
-                toggleFunction={toggleSearch} 
-                updateLocationData={updateLocationData}
-                /> 
-            ) : (
-                <ToggleSearch toggleFunction={toggleSearch} /> 
-            )}
             < Current city={city} current={current} daily={daily} />
             < Hourly weatherData={weatherData} />
             < Daily weatherData={weatherData} />

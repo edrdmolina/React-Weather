@@ -6,6 +6,7 @@ import axios from 'axios';
 import Background from './Components/Background';
 import Loading from './Components/Loading';
 import Weather from './Components/Weather';
+import Search from './Components/Search';
 
 // const backendURL = 'https://multi-purpose-api.herokuapp.com/api/weather';
 
@@ -103,6 +104,7 @@ export class App extends Component {
         return (
             <div>
                 < Background weatherData={weatherData} hasWeather={hasWeather} />
+                < Search updateLocationData={updateLocationData} />
                 { hasWeather ? (
                     < Weather 
                     updateLocationData={updateLocationData}
