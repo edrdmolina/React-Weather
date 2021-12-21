@@ -1,5 +1,6 @@
 {
   "name": "react-weather",
+  "homepage": "https://edrdmolina.github.io/react-weather/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +14,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.23.0",
+    "gh-pages": "^3.2.3",
     "immer": "^9.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -23,6 +25,8 @@
   "proxy": "https://multi-purpose-api.herokuapp.com",
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
