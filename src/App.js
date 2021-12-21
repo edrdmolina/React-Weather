@@ -16,7 +16,7 @@ export class App extends Component {
         this.state = {
             lat: '',
             lon: '',
-            unit: 'imperial',
+            units: 'imperial',
             lang: 'en',
             weatherData: {},
             locationData: {},
@@ -51,8 +51,8 @@ export class App extends Component {
     // Gets weather data from backend
     getWeatherData = async () => {
         try {
-            const { lat, lon, unit, lang } = this.state;
-            const input = {lat, lon, unit, lang};
+            const { lat, lon, units, lang } = this.state;
+            const input = {lat, lon, units, lang};
             const res = await axios.post('http://localhost:5000/api/weather', input);
             if(res.status !== 200) return console.error(res.status);
             const { weatherData, location } = res.data;
@@ -89,7 +89,7 @@ export class App extends Component {
     
     render() {
         const { updateLocationData } = this;
-        const { weatherData, locationData, hasWeather, unit } = this.state;
+        const { weatherData, locationData, hasWeather, units } = this.state;
 
         return (
             <div>
@@ -100,7 +100,7 @@ export class App extends Component {
                     updateLocationData={updateLocationData}
                     locationData={locationData} 
                     weatherData={weatherData} 
-                    unit={unit} 
+                    unit={units} 
                     />
                 ) : (
                     < Loading updateLocationData={updateLocationData} />

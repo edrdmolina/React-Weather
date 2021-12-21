@@ -75,7 +75,7 @@ function UVIndex(props) {
     else if(uvi < 11) level = 'Very High';
     else level = 'Extreme';
     
-    let point = ((uvi * 10) - 10) + '%' 
+    let point = ((uvi * 10)) + '%' 
 
     return (
         <div className={classes.box}>
