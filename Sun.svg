@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="5 25 200 185"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="Sun.svg">
+  <defs
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter7574"
+       x="-0.012075087"
+       width="1.0241502"
+       y="-0.011925841"
+       height="1.0238517">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.74561702"
+         id="feGaussianBlur7576" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="132.66481"
+     inkscape:cy="641.32508"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2560"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ff5400;fill-opacity:1;stroke-width:0.29789606;opacity:1;filter:url(#filter7574)"
+       d="m 161.39583,115.38243 c 0,5.284 20.63784,10.82091 19.63084,15.80349 -1.00699,4.98259 -21.76894,4.49715 -23.68161,9.07571 -1.91266,4.57857 15.02396,14.22115 12.30696,18.29312 -2.717,4.07196 -19.04001,-4.98622 -22.46002,-1.52346 -3.42001,3.46277 6.06297,19.44647 2.04128,22.19743 -4.02169,2.75097 -15.87842,-10.75462 -20.40046,-8.81805 -4.52205,1.93658 -1.70941,19.3153 -6.63048,20.33489 -4.92107,1.01958 -9.26037,-16.96581 -14.47913,-16.96581 -5.21876,0 -11.069958,17.98539 -15.991026,16.96581 -4.921068,-1.01959 -2.864386,-18.77629 -7.38643,-20.71287 -4.522045,-1.93657 -15.622817,11.947 -19.64451,9.19603 -4.021693,-2.75096 4.705337,-18.35668 1.285325,-21.81945 -3.420012,-3.46276 -18.987066,5.21744 -21.704068,1.14548 -2.717002,-4.07197 11.195809,-14.09252 9.283145,-18.67109 -1.912664,-4.57857 -19.650802,-3.71515 -20.657798,-8.69774 -1.006997,-4.98258 16.60703,-10.51949 16.60703,-15.80349 0,-5.28399 -17.614027,-10.06495 -16.60703,-15.04754 1.006996,-4.982577 18.367158,-1.095349 20.279822,-5.673919 1.912663,-4.57857 -11.622172,-17.622938 -8.905169,-21.694902 2.717002,-4.071964 17.906079,6.498119 21.326091,3.035357 3.420012,-3.462761 -4.929041,-20.958369 -0.907349,-23.709333 4.021693,-2.750965 15.500442,11.888547 20.022487,9.951975 4.522045,-1.936572 2.087385,-20.449227 7.008453,-21.468811 4.921068,-1.019583 9.260367,18.477715 14.479127,18.477715 5.21876,0 11.06996,-19.497298 15.99103,-18.477714 4.92107,1.019584 1.73045,19.532239 6.2525,21.468811 4.52204,1.936572 16.75675,-12.70294 20.77844,-9.951975 4.02169,2.750964 -5.83926,19.112643 -2.41925,22.575405 3.42001,3.462762 20.12099,-5.973393 22.83799,-1.90143 2.717,4.071964 -11.95176,17.494309 -10.0391,22.072879 1.91267,4.57857 20.40676,0.313366 21.41375,5.295942 1.007,4.98259 -19.63084,9.76355 -19.63084,15.04754 z"
+       id="path4540"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssssssssssssssssssssssssssssssss" />
+    <ellipse
+       style="fill:#ffc800;fill-opacity:1;stroke-width:0.29849872;"
+       id="path4542"
+       cx="105.83332"
+       cy="115.94939"
+       rx="51.404762"
+       ry="53.29464" />
+  </g>
+</svg>
