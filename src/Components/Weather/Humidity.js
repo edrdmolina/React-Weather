@@ -9,6 +9,7 @@ const HumidityStyles = makeStyles({
         width: '45%',
         maxWidth: '225px',
         aspectRatio: '1 / 1',
+        minHeight: '',
         backgroundColor: 'rgba(15,75,255,0.15)',
         boxShadow: '3px 3px 10px rgba(0,0,0,0.5)',
         borderRadius: '10px',
@@ -38,18 +39,16 @@ const HumidityStyles = makeStyles({
         aspectRatio: '1.25 / 1',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
+        alignItems: 'center',
 
         '& p': {
-            padding: '2rem',
+            fontSize: '13px'
         }
     },
     percent: {
         fontSize: '35px',
-        padding: '2rem 0 0 2rem'
     },
-
-    
 })
 
 function Humidity(props) {

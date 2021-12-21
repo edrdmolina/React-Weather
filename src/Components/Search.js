@@ -89,7 +89,6 @@ function Search(props) {
 
     async function geoLocation(e) {
         e.preventDefault();
-        console.log('submitting form')
         document.getElementById('address').blur();
         
         const input = { countryCode, address}
@@ -103,9 +102,7 @@ function Search(props) {
 
     function toggleNav(e) {
         e.preventDefault();
-        console.log('toggle')
         toggleShowNav(!showNav);
-        
     }
 
     return (

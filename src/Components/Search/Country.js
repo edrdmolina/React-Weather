@@ -11,14 +11,12 @@ export default function Country(props) {
     const { setCountryCode } = props;
 
     function handleChange(e) {
-        console.log('Changing Country')
         if(e.target.childNodes.length < 2) {
             setCountryCode('');
         } else {
             const code = e.target.childNodes[0].alt;
             setCountryCode(code)
         }
-
     }
 
     return (

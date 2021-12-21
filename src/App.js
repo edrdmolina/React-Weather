@@ -27,12 +27,8 @@ export class App extends Component {
     }
 
     componentDidMount = () => {
-      if('geolocation' in navigator) {
-        console.log("Geo-Location is available");
-        this.getGeo();
-      } else {
-        console.log("Geo-Location is not available");
-      }
+      if('geolocation' in navigator) this.getGeo(); 
+      else console.error("Geo-Location is not available");
     }
 
     componentDidUpdate = () => {
@@ -56,17 +52,11 @@ export class App extends Component {
     getWeatherData = async () => {
         try {
             const { lat, lon, unit, lang } = this.state;
-
             const input = {lat, lon, unit, lang};
-
             const res = await axios.post('http://localhost:5000/api/weather', input);
-
-            if(res.status !== 200) return console.log(res.status);
-
+            if(res.status !== 200) return console.error(res.status);
             const { weatherData, location } = res.data;
-
             this.setState({ weatherData: weatherData, hasWeather: true, locationData: location })
-
         } catch (err) {
             console.error(err)
         }
