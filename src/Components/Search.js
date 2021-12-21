@@ -78,7 +78,7 @@ const searchStyles = makeStyles({
     }
 })
 
-// const backendURL = 'https://multi-purpose-api.herokuapp.com/api/weather';
+const backendURL = 'https://multi-purpose-api.herokuapp.com/api/weather/geolocation';
 
 function Search(props) {
     const [countryCode, setCountryCode] = useState('')
@@ -93,7 +93,7 @@ function Search(props) {
         
         const input = { countryCode, address}
 
-        const res = await axios.post('http://localhost:5000/api/weather/geolocation', input);
+        const res = await axios.post(backendURL, input);
 
         const { error, location } = res.data;
         if(error) return console.error(error);

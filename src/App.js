@@ -8,7 +8,7 @@ import Loading from './Components/Loading';
 import Weather from './Components/Weather';
 import Search from './Components/Search';
 
-// const backendURL = 'https://multi-purpose-api.herokuapp.com/api/weather';
+const backendURL = 'https://multi-purpose-api.herokuapp.com/api/weather';
 
 export class App extends Component {
     constructor(props) {
@@ -53,7 +53,7 @@ export class App extends Component {
         try {
             const { lat, lon, units, lang } = this.state;
             const input = {lat, lon, units, lang};
-            const res = await axios.post('http://localhost:5000/api/weather', input);
+            const res = await axios.post(backendURL, input);
             if(res.status !== 200) return console.error(res.status);
             const { weatherData, location } = res.data;
             this.setState({ weatherData: weatherData, hasWeather: true, locationData: location })
