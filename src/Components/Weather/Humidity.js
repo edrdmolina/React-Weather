@@ -39,7 +39,7 @@ const HumidityStyles = makeStyles({
         aspectRatio: '1.25 / 1',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
 
         '& p': {
@@ -64,7 +64,7 @@ function Humidity(props) {
             </div>
             <div className={classes.humidity}>
                 <div className={classes.percent}>{current.humidity}%</div>
-                <p>The dew point is {Math.trunc(current.dew_point)}° right now.</p>
+                <p>The dew point is {Math.trunc(current.dew_point)}°</p>
             </div>
         </div>
     )
