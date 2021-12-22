@@ -12,7 +12,7 @@ const feelsLikeStyles = makeStyles({
         backgroundColor: 'rgba(15,75,255,0.15)',
         boxShadow: '3px 3px 10px rgba(0,0,0,0.5)',
         borderRadius: '10px',
-        margin: '1rem 0',
+        margin: '10px 0',
         color: 'white',
     },
     tag: {
@@ -38,7 +38,9 @@ const feelsLikeStyles = makeStyles({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        textAlign: 'center',
+        '& span': {
+            marginBottom: '10%'
+        }
     }
     
 })
@@ -55,7 +57,7 @@ function FeelsLike(props) {
                 </span>
             </div>
             <div className={classes.temp}>
-                {feelsLike}°
+                <span>{feelsLike}°</span>
             </div>
         </div>
     )

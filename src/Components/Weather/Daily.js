@@ -19,7 +19,7 @@ const dailyStyles = makeStyles({
         color: 'white',
         backgroundColor: 'rgba(15,75,255,0.15)',
         borderRadius: '10px',
-        margin: '2rem 0',
+        margin: '1rem 0',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
