@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/React-Weather/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/React-Weather/static/js/main.32ede5f4.chunk.js",
-    "main.js.map": "/React-Weather/static/js/main.32ede5f4.chunk.js.map",
-    "runtime-main.js": "/React-Weather/static/js/runtime-main.0b80dd22.js",
-    "runtime-main.js.map": "/React-Weather/static/js/runtime-main.0b80dd22.js.map",
-    "static/js/2.06169936.chunk.js": "/React-Weather/static/js/2.06169936.chunk.js",
-    "static/js/2.06169936.chunk.js.map": "/React-Weather/static/js/2.06169936.chunk.js.map",
-    "static/js/3.a7d8cb1d.chunk.js": "/React-Weather/static/js/3.a7d8cb1d.chunk.js",
-    "static/js/3.a7d8cb1d.chunk.js.map": "/React-Weather/static/js/3.a7d8cb1d.chunk.js.map",
+    "main.js": "/React-Weather/static/js/main.9c09328f.chunk.js",
+    "main.js.map": "/React-Weather/static/js/main.9c09328f.chunk.js.map",
+    "runtime-main.js": "/React-Weather/static/js/runtime-main.cb431b98.js",
+    "runtime-main.js.map": "/React-Weather/static/js/runtime-main.cb431b98.js.map",
+    "static/js/2.927a20cf.chunk.js": "/React-Weather/static/js/2.927a20cf.chunk.js",
+    "static/js/2.927a20cf.chunk.js.map": "/React-Weather/static/js/2.927a20cf.chunk.js.map",
+    "static/js/3.ebb3fc5f.chunk.js": "/React-Weather/static/js/3.ebb3fc5f.chunk.js",
+    "static/js/3.ebb3fc5f.chunk.js.map": "/React-Weather/static/js/3.ebb3fc5f.chunk.js.map",
     "index.html": "/React-Weather/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/React-Weather/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.06169936.chunk.js.LICENSE.txt": "/React-Weather/static/js/2.06169936.chunk.js.LICENSE.txt",
+    "static/js/2.927a20cf.chunk.js.LICENSE.txt": "/React-Weather/static/js/2.927a20cf.chunk.js.LICENSE.txt",
     "static/media/BrokenClouds.a6462bdd.svg": "/React-Weather/static/media/BrokenClouds.a6462bdd.svg",
     "static/media/ClearSky.f7c5ab47.svg": "/React-Weather/static/media/ClearSky.f7c5ab47.svg",
     "static/media/Compass.b549ee1d.svg": "/React-Weather/static/media/Compass.b549ee1d.svg",
@@ -36,9 +36,9 @@
     "static/media/WindIcon.1ecee811.svg": "/React-Weather/static/media/WindIcon.1ecee811.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0b80dd22.js",
-    "static/js/2.06169936.chunk.js",
+    "static/js/runtime-main.cb431b98.js",
+    "static/js/2.927a20cf.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.32ede5f4.chunk.js"
+    "static/js/main.9c09328f.chunk.js"
   ]
 }
