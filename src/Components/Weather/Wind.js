@@ -34,13 +34,14 @@ const WindStyles = makeStyles({
         }
     },
     wind: {
-        width: '100%',
+        width: '95%',
         aspectRatio: '1.25 / 1',
         backgroundImage: `url(${Compass})`,
         backgroundSize: '100% 100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        
     },
     arrow: {
         width: '100%',
@@ -52,7 +53,7 @@ const WindStyles = makeStyles({
         alignItems: 'center',
     },
     speed: {
-        height: '75px',
+        height: '70px',
         aspectRatio: '1 / 1',
         backgroundColor: 'rgba(115,115,255)',
         borderRadius: '50%',
@@ -63,6 +64,12 @@ const WindStyles = makeStyles({
         fontSize: '20px',
         textAlign: 'center',
     },
+    windInfo: {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 })
 
 function Wind(props) {
@@ -83,11 +90,13 @@ function Wind(props) {
                 <img src={WindIcon} alt='Wind Icon' className={classes.icon} /> Wind
                 </span>
             </div>
-            <div className={classes.wind}>
-                <div className={classes.arrow} style={{transform: `rotate(${deg}deg)`}}>
-                    <div className={classes.speed} style={{transform: `rotate(-${deg}deg)`}} >
-                        {speed} <br />
-                        {unitOfMeasurement}
+            <div className={classes.windInfo}>
+                <div className={classes.wind}>
+                    <div className={classes.arrow} style={{transform: `rotate(${deg}deg)`}}>
+                        <div className={classes.speed} style={{transform: `rotate(-${deg}deg)`}} >
+                            {speed} <br />
+                            {unitOfMeasurement}
+                        </div>
                     </div>
                 </div>
             </div>
