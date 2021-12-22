@@ -8,7 +8,7 @@ import BackgroundAnimation from './BackgroundAnimation';
 const backgroundStyles = makeStyles({
     background: {
         position: 'fixed',
-        minHeight: '100vh',
+        minHeight: '120vh',
         width: '100vw',
         zIndex: '-20',
     },

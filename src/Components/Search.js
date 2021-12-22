@@ -123,7 +123,7 @@ function Search(props) {
 
     return (
         <div className={`${classes.nav}`}>
-            < AddLocationIcon className={classes.open} onClick={toggleNav} />
+            < AddLocationIcon className={classes.open} fontSize='large' onClick={toggleNav} />
             <form className={`${classes.form} ${showNav ? classes.opening : classes.closing}`} onSubmit={geoLocation}>
                 <div className={classes.inputs}>
                     <Country setCountryCode={setCountryCode} />

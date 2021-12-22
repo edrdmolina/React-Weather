@@ -17,7 +17,8 @@ const weatherStyles = makeStyles({
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '50px',
     },
     squares: {
         width: '90%',
