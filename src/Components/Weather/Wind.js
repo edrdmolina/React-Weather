@@ -61,6 +61,7 @@ const WindStyles = makeStyles({
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: '20px',
+        textAlign: 'center',
     },
 })
 
