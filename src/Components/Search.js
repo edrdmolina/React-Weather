@@ -30,15 +30,16 @@ const searchStyles = makeStyles({
         backgroundColor: 'rgba(252,244,3,1)',
         borderRadius: '0px 0px 10px 10px',
         boxShadow: '0px 3px 20px rgba(0,0,0,0.5)',
-        height: '150px',
+        height: '200px',
         width: '90vw',
         maxWidth: '600px',
-        top: '-160px',
+        top: '-210px',
     },
     inputs: {
         display: 'flex',
         width: '95%',
         justifyContent: 'space-around',
+        marginTop: '25px',
     },
     open: {
         margin: '25px',
@@ -82,13 +83,13 @@ const searchStyles = makeStyles({
     },
     '@keyframes opening': {
         from: { transform: 'translateY(0)' },
-        to: { transform: 'translateY(160px)' }
+        to: { transform: 'translateY(210px)' }
     },
     closing: {
         animation: '$closing 0.5s ease-in forwards'
     },
     '@keyframes closing': {
-        from: { transform: 'translateY(160px)' },
+        from: { transform: 'translateY(210px)' },
         to: { transform: 'translateY(0)' }
     }
 })
