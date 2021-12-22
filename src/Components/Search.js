@@ -12,6 +12,7 @@ import Country from './Search/Country';
 import Address from './Search/Address';
 import CloseIcon from '@mui/icons-material/Close';
 import MyLocationIcon from '@mui/icons-material/MyLocation';
+import AddLocationIcon from '@mui/icons-material/AddLocation';
 
 // Styles
 const searchStyles = makeStyles({
@@ -51,6 +52,20 @@ const searchStyles = makeStyles({
             transform: 'translate(1px, 1px)'
         }
     },
+    location: {
+        color: 'rgba(25,25,25)',
+        borderRadius: '50%',
+        '&:hover': {
+            cursor: 'pointer',
+            transform: 'scale(1.05)',
+            textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+            backgroundColor: 'rgba(50,50,50,0.05)',
+        },
+        '&:active': {
+            transform: 'translate(1px, 1px)',
+            backgroundColor: 'rgba(50,50,50,0.05)',
+        }
+    },
     close: {
         margin: '0 auto',
         color: 'rgba(25,25,25)',
@@ -84,7 +99,7 @@ function Search(props) {
     const [countryCode, setCountryCode] = useState('')
     const [showNav, toggleShowNav] = useState(false);
     const [address, setAddress, clearAddress] = useChangeInput('')
-    const { updateLocationData } = props;
+    const { updateLocationData, getGeo } = props;
     const classes = searchStyles(showNav);
 
     async function geoLocation(e) {
@@ -107,14 +122,15 @@ function Search(props) {
 
     return (
         <div className={`${classes.nav}`}>
-            < MyLocationIcon className={classes.open} onClick={toggleNav} />
+            < AddLocationIcon className={classes.open} onClick={toggleNav} />
             <form className={`${classes.form} ${showNav ? classes.opening : classes.closing}`} onSubmit={geoLocation}>
                 <div className={classes.inputs}>
                     <Country setCountryCode={setCountryCode} />
                     <Address address={address} setAddress={setAddress} clearAddress={clearAddress} />
                     <Button sx={{height: '40px', width: '10%'}} type='submit' variant="outlined" size="small">Submit</Button>
                 </div>
-                <CloseIcon className={classes.close} onClick={toggleNav} />
+                < MyLocationIcon className={classes.location} onClick={getGeo} />
+                < CloseIcon className={classes.close} onClick={toggleNav} />
             </form>
         </div>
     )

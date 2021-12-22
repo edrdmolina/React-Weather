@@ -65,7 +65,6 @@ export class App extends Component {
     // Get geolocation from browser navigator
     getGeo = () => {
         // https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
-
         const { updateLatLon, getWeatherData } = this;
 
         const options = {
@@ -88,13 +87,13 @@ export class App extends Component {
     }
     
     render() {
-        const { updateLocationData } = this;
+        const { updateLocationData, getGeo } = this;
         const { weatherData, locationData, hasWeather, units } = this.state;
 
         return (
             <div>
                 < Background weatherData={weatherData} hasWeather={hasWeather} />
-                < Search updateLocationData={updateLocationData} />
+                < Search updateLocationData={updateLocationData} getGeo={getGeo}/>
                 { hasWeather ? (
                     < Weather 
                     updateLocationData={updateLocationData}
