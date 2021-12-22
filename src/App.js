@@ -103,7 +103,7 @@ export class App extends Component {
                     unit={units} 
                     />
                 ) : (
-                    < Loading updateLocationData={updateLocationData} />
+                    < Loading />
                 )}
             </div>
         )

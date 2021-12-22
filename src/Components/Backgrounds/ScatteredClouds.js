@@ -33,20 +33,28 @@ const ScatteredCloudsStyles = makeStyles({
     cloud11: { animation: '$slideLeft 52s linear Infinite', position: 'absolute', transform: 'scale(1.1)', top: '55%', left: '25%',},
     '@keyframes slideRight': {
         from: {
-            marginLeft: '-50%'
+            marginLeft: '-50%',
+            opacity: '0'
         },
+        '25%': { opacity: '0.35' },
+        '50%': { opacity: '0.75' },
+        '75%': { opacity: '0.35' },
         to: {
-            marginLeft: '100%'
+            marginLeft: '100%',
+            opacity: '0'
         }
     },
     '@keyframes slideLeft': {
         from: {
             marginLeft: '100%',
-            opacity: '1',
+            opacity: '0',
         },
+        '25%': { opacity: '0.35' },
+        '50%': { opacity: '0.75' },
+        '75%': { opacity: '0.35' },
         to: {
             marginLeft: '-50%',
-            opacity: '0.25',
+            opacity: '0',
         }
     },
 })

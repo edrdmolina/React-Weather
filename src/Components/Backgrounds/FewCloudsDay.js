@@ -74,11 +74,14 @@ const FewCloudsDayStyles = makeStyles({
     '@keyframes slideRight': {
         from: {
             marginLeft: '-50%',
-            opacity: '1',
+            opacity: '0'
         },
+        '25%': { opacity: '0.35' },
+        '50%': { opacity: '0.75' },
+        '75%': { opacity: '0.35' },
         to: {
             marginLeft: '100%',
-            opacity: '0.25',
+            opacity: '0'
         }
     },
 })

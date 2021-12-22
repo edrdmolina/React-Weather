@@ -40,7 +40,6 @@ const loadingStyles = makeStyles({
 })
 
 function Loading(props) {
-    const { updateLocationData } = props;
     const classes = loadingStyles();
 
     return (
