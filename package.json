@@ -22,7 +22,7 @@
     "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2"
   },
-  "proxy": "https://multi-purpose-api.herokuapp.com",
+  "proxy": "http://multipurpose-env.eba-mjune5ps.us-east-1.elasticbeanstalk.com/",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",

@@ -94,7 +94,7 @@ const searchStyles = makeStyles({
     }
 })
 
-const backendURL = 'https://multi-purpose-api.herokuapp.com/api/weather/geolocation';
+const backendURL = 'http://multipurpose-env.eba-mjune5ps.us-east-1.elasticbeanstalk.com/api/weather/geolocation';
 
 function Search(props) {
     const [countryCode, setCountryCode] = useState('')

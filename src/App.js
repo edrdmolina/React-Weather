@@ -8,7 +8,7 @@ import Loading from './Components/Loading';
 import Weather from './Components/Weather';
 import Search from './Components/Search';
 
-const backendURL = 'https://multi-purpose-api.herokuapp.com/api/weather';
+const backendURL = 'http://multipurpose-env.eba-mjune5ps.us-east-1.elasticbeanstalk.com/api/weather';
 
 export class App extends Component {
     constructor(props) {
